@@ -1,0 +1,172 @@
+/* background color page landing */
+#page-landing {
+    background-color: var(--color-primary);
+}
+
+/* cor fonte abaixo da logo */
+#page-landing #container {
+    color: var(--color-text-in-primary)
+}
+
+/* tamanho da logo */
+.logo-container img {
+    height: 10rem;
+}
+
+.logo-container {
+    text-align: center;
+    margin-bottom: 3.2rem;
+}
+
+.logo-container h2 {
+    font-weight: 500;
+    font-size: 3.6rem;
+    /* altura da linha */
+    line-height: 4.6rem;
+    margin-top: 0.8rem;
+}
+
+/* img dentro do container com 100% largura, referencia do pai, herdando a largura do pai = 700px */
+.hero-image {
+    width: 100%;
+
+}
+
+/* tratando os botões */
+
+
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    margin: 3.2rem 0;
+}
+
+.buttons-container a {
+    width: 30rem;
+    height: 10.4rem;
+
+    /* arrendodamento da borda */
+    /*  background-color: aqua; */
+    border-radius: 0.8rem;
+    margin-right: 1.8rem;
+
+    /* 700 de peso, tamanho e qual fonte estilizar Archivo "Google Fonts" */
+    font: 700 2.4rem Archivo;
+
+
+    display: flex;
+    align-items: center;
+    /* alinhar bem ao centro */
+    justify-content: center;
+
+    /* removendo o estilo padrao do texto */
+    text-decoration: none;
+
+    /* animação hover dos botões deixando mais suave */
+
+    transition: background 0.2s;
+
+    /* definindo a cor do texto */
+    color: var(--color-button-text);
+}
+
+/* size icons */
+.buttons-container a img {
+    width: 4rem;
+    /* sepaarar os icons, espacinho*/
+    margin-right: 2.4rem;
+}
+
+/* backgound color buttons */
+
+.buttons-container a.study {
+    background: var(--color-primary-lighter);
+}
+
+.buttons-container a.study:hover {
+    background: var(--color-primary-light);
+}
+
+.buttons-container a.give-classes {
+    background: var(--color-secondary);
+    /* aquela sobrinha, não há elemento, poderá ter probleminha */
+    margin-right: 0;
+}
+
+.buttons-container a.give-classes:hover {
+    background: var(--color-secondary-dark);
+}
+
+.total-connections {
+    font-size: 1.8rem;
+
+    /* alinhar o texto e icons (itens) */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.total-connections img {
+    margin-left: 0.8rem;
+}
+
+/* regra css quando comprir um certo padrao -  ex.: analisando largura min */
+
+@media(max-width: 699px) {
+    :root {
+        font-size: 40%;
+        /* modificar as medidas em rem */
+    }
+}
+
+/* desktop */
+@media(min-width:1100px) {
+    #page-landing #container {
+        max-width: 1100px;
+
+        /* trabalhando com as colunas */
+        display: grid;
+        /* fr frações, podemos usar % ou fixo px */
+        grid-template-columns: 2fr 1fr 2fr;
+        grid-template-rows: 350px 1fr;
+        /* posições estrategicas */
+        grid-template-areas:
+            "proffy image image"
+            "button button texting";
+        column-gap: 87px;
+        row-gap: 86px;
+    }
+
+    .logo-container {
+        grid-area: proffy;
+        text-align: initial;
+        /* align self não deixa o elemento sair fora do grid */
+        align-self: center;
+        margin: 0;
+
+    }
+
+    .logo-container img {
+        height: 127px;
+    }
+
+
+    .hero-image {
+        grid-area: image;
+        height: 350px;
+    }
+
+    .buttons-container {
+        grid-area: button;
+        /* sobreescrevendo o justify content center "definido anteriormente",para flex start  */
+        justify-content: flex-start;
+        margin: 0;
+    }
+
+    .total-connections {
+        grid-area: texting;
+        justify-self: end;
+        font-size: 1.2rem;
+    }
+
+}
