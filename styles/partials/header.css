@@ -58,7 +58,7 @@
 /* ajustes na font strong */
 
 .page-header .header-content strong {
-    font: 700 3.6rem Poppins;
+    font: 700 3.6rem Archivo;
     /* alturea da linha das fontes */
     line-height: 4.2rem;
     color: var(--color-title-in-primary);
@@ -86,7 +86,7 @@
     }
 
     .page-header .header-content strong {
-        max-width: 400px;
+        max-width: 350px;
     }
 
 }
