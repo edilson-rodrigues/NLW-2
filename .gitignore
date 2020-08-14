@@ -3,4 +3,4 @@
 .idea/modules.xml
 .idea/NLW.iml
 .idea/vcs.xml
-.node_modules
+node_modules/
